@@ -1,0 +1,77 @@
+import java.util.*;
+
+class que1 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Row of the Matrix : ");
+        int m = sc.nextInt();
+        System.out.println("Enter the Colum of the Matrix");
+        int n = sc.nextInt();
+
+        int a[][] = new int[m][n];
+        int even = 0, odd = 0, positive = 0, negative = 0, zero = 0;
+        System.out.println("Enter the elements of matrix");
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        for (int i = 0; i < m; i++) 
+        {
+            for (int j = 0; j < n; j++) 
+            {
+
+                if (a[i][j] > 0) 
+                {
+                    if (a[i][j] % 2 == 0) 
+                    {
+                        positive++;
+                        even++;
+                    } 
+                    else 
+                    {
+                        positive++;
+                        odd++;
+                    }
+                }
+
+                else if (a[i][j] < 0) 
+                {
+                    if (a[i][j] % 2 == 0) 
+                    {
+                        negative++;
+                        even++;
+                    }
+                    else 
+                    {
+                        negative++;
+                        odd++;
+                    }
+                } 
+
+                else if (a[i][j] == 0) 
+                {
+                    if (a[i][j] % 2 == 0) 
+                    {
+                        zero++;
+                        even++;
+                    }
+                }
+
+            }
+
+        }
+
+        System.out.println("Number of even number is : " + even);
+        System.out.println("Number of odd number is : " + odd);
+        System.out.println("Number of positive number is : " + positive);
+        System.out.println("Number of negative number is : " + negative);
+        System.out.println("Number of zero is : " + zero);
+
+    }
+
+}
